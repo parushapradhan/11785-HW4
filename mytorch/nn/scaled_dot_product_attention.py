@@ -24,7 +24,9 @@ class ScaledDotProductAttention:
         :return: Output matrix of shape (N, ..., H, L, Ev)
         """
         # TODO: Implement forward pass
-        
+        self.Q = Q
+        self.K = K
+        self.V = V
         # Calculate attention scores: (N, ..., H, L, S)
         # (N, ..., H, L, E) @ (N, ..., H, E, S) -> (N, ..., H, L, S)
         scaled_dot_product = Q @ np.swapaxes(K, -2, -1) / np.sqrt(K.shape[-1])

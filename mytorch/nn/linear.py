@@ -40,7 +40,7 @@ class Linear:
         Z = Z.reshape(A.shape[0:-1] + (self.W.shape[0],))
         self.A = A
         
-        raise Z
+        return Z
 
     def backward(self, dLdZ):
         """
@@ -56,4 +56,4 @@ class Linear:
         self.dLdA = self.dLdA.reshape(self.A.shape)
         
         # Return gradient of loss wrt input
-        raise self.dLdA
+        return self.dLdA
