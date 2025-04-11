@@ -250,7 +250,7 @@ class ASRDataset(Dataset):
         """
         # TODO: Load features
         feat = self.feats[idx]
-
+        feat = torch.tensor(feat, dtype=torch.float32)
         # TODO: Apply normalization
         if self.config['norm'] == 'global_mvn':
             assert self.global_mean is not None and self.global_std is not None, "Global mean and std must be computed before normalization"
